@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <h3 class="pt-4">{{this.servicio.articuloActual?.name || "Panel principal"}}</h3>
+  <div class="row justify-content-around p-3">
+    <app-modal-add-product ></app-modal-add-product>
+    <button class="btn btn-primary" (click)="addProduct()">Ver pantalla completa</button>
+    <button class="btn btn-primary">Personalizar gráfica</button>
+    <div ngbDropdown class="">
+      <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>Ver por</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Día</button>
+        <button ngbDropdownItem>Semana</button>
+        <button ngbDropdownItem>Mes</button>
+      </div>
+    </div>
+
+  </div>
+  <app-price-history-chart [variable]="title"></app-price-history-chart>
+
+</div>
+
+

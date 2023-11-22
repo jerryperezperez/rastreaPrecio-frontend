@@ -1,0 +1,30 @@
+.list-group-item-action{
+  background-color: #2e2e3d;
+}
+
+.list-group-item-action:hover{
+  background-color: #373752;
+}
+
+.active{
+  background-color: #373752;
+
+}
+.title{
+  height: 10vh;
+  border-bottom: 1px solid whitesmoke;
+  background-color: #2e2e3d;
+}
+.list-group{
+  height: 90vh;
+  width: 100%;
+  overflow-y: scroll;
+  scrollbar-color: #7b7b9a #2e2e3d;
+
+
+
+}
+.list-group-item{
+  color: white;
+}
+

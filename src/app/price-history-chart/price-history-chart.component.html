@@ -1,0 +1,13 @@
+<div class="bg-light">
+    <canvas baseChart
+            [datasets]=this.servicio.getPrecios()
+            [labels]=this.servicio.getFechas()
+            [options]="barChartOptions"
+            [type]="lineChartType"
+            [legend]="barChartLegend" *ngIf="this.servicio.articuloActual; else elseBlock"
+            >
+    </canvas>
+  <ng-template #elseBlock >
+    <h3 class="text-center p-5">Seleccione un producto para ilustrar gráfica</h3>
+  </ng-template>
+</div>
