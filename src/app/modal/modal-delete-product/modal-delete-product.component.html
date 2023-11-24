@@ -1,0 +1,25 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Eliminación de artículo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p><strong>¿Estás seguro de que quieres eliminar el artículo
+      <span class="text-primary">{{this.servicio.articuloActual.name}}</span>?</strong></p>
+    <p>Toda la información registrada del artículo se perderá.
+      <span class="text-danger">Esta operación no puede ser cancelada.</span>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cross click')">Cancelar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Eliminar</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-danger text-right" (click)="open(content)">
+  <fa-icon [icon]="faTrash"></fa-icon>
+</button>
+
+<!--<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>-->

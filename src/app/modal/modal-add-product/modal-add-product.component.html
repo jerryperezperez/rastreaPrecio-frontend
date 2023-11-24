@@ -9,20 +9,23 @@
     <form>
       <div class="form-group">
         <label for="exampleFormControlInput1">Nombre de producto</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""
+               [(ngModel)]="nuevoArticulo.name" name="producto">
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Tienda</label>
-        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder=""
+               [(ngModel)]="nuevoArticulo.store" name="store">
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1">URL de producto</label>
-        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com">
+        <input type="url" class="form-control" id="exampleFormControlInput3" placeholder=""
+               [(ngModel)]="nuevoArticulo.url" name="url">
       </div>
 
-      <button class="btn btn-primary">Probar análisis de precio</button>
+      <button class="btn btn-primary" (click)="abrir()">Probar análisis de precio</button>
 
     </form>
   </div>

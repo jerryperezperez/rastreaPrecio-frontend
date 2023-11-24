@@ -1,18 +1,16 @@
 import {Precio} from "./Precio";
 
 export class Articulo {
-  id: number;
+  id?: number;
   name: string = "";
   url: string;
   store: string;
-  precios: Precio[];
+  precios?: Precio[];
 
 
-  constructor(id: number, name: string, url: string, store: string, precios: Precio[]) {
-    this.id = id;
+  constructor(name: string, url: string, store: string) {
     this.name = name;
     this.url = url;
     this.store = store;
-    this.precios = precios;
   }
 }

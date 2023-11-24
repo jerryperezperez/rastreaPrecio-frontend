@@ -14,6 +14,7 @@ import {ModalEditProductComponent} from './modal/modal-edit-product/modal-edit-p
 import {ServicioService} from "./servicio.service";
 import {HttpClientModule} from "@angular/common/http";
 import {NgChartsModule} from "ng2-charts";
+import { ModalDeleteProductComponent } from './modal/modal-delete-product/modal-delete-product.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NgChartsModule} from "ng2-charts";
     FooterComponent,
     HeaderComponent,
     ModalAddProductComponent,
-    ModalEditProductComponent
+    ModalEditProductComponent,
+    ModalDeleteProductComponent
   ],
   imports: [
     BrowserModule,

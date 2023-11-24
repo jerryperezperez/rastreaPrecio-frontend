@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, catchError, Observable} from "rxjs";
 import {Articulo} from "./model/Articulo";
 import {Precio} from "./model/Precio";
 
@@ -46,7 +46,22 @@ export class ServicioService {
 
   }
 
-  getArticulos(): Observable<Articulo[]> {
-    return this.http.get<Articulo[]>(`${this.apiUrl}/articulo`)
+  deleteArticulo(id: number): Observable<number> {
+    console.log(`${this.apiUrl}/articulos/` + id)
+    return this.http.delete<number>(`${this.apiUrl}/articulos/` + id)
   }
+
+  getArticulos(): Observable<Articulo[]> {
+    return this.http.get<Articulo[]>(`${this.apiUrl}/articulos`)
+  }
+
+  //TODO Validar que el objeto haya sido creado para poder agregarlo en la vista directamente
+  addArticulo(articulo: Articulo): Observable<Articulo> {
+    return this.http.post<Articulo>(`${this.apiUrl}/articulos`, articulo)
+  }
+
+  // testWebScrapping(articulo: Articulo){
+  //    this.http.get<number>(`${this.apiUrl}/articulos`, articulo)
+  // }
+
 }
