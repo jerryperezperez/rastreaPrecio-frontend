@@ -9,7 +9,7 @@ import {Precio} from "./model/Precio";
 })
 export class ServicioService {
 
-  private apiUrl = 'http://192.168.0.86:5000';
+  private apiUrl = 'http://localhost:5000';
   public articulos: Articulo[] = [];
   public articuloActual: Articulo | any;
 

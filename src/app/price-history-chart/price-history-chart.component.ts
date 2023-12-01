@@ -10,24 +10,18 @@ export class PriceHistoryChartComponent implements OnInit{
 
   public lineChartType: ChartType = 'line';
     public barChartOptions: any = {
-        scaleShowVerticalLines: false,
-        responsive: true
+        scaleShowVerticalLines: true,
+        responsive: true,
+        maintainAspectRatio: false,
     };
     public barChartLegend: boolean = true;
 
-    @Input() variable: string = "";
 
     constructor(protected servicio: ServicioService) {
 
     }
 
     ngOnInit(): void {
-        // this.servicio.data$.subscribe((newValue)=>{
-        //     this.barChartData = [
-        //         {data: [65, 59, 80, 81, 56, 55, 100], label: newValue},
-        //         {data: [28, 48, 40, 19, 86, 27, 90], label: newValue}
-        //     ];
-        // })
     }
 
 
