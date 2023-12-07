@@ -1,1 +1,41 @@
-<p>modal-edit-product works!</p>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Editar producto producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Nombre de producto</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""
+               [(ngModel)]="this.servicio.articuloActual.name" name="producto">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Tienda</label>
+        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder=""
+               [(ngModel)]="this.servicio.articuloActual.store" name="store">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">URL de producto</label>
+        <input type="url" class="form-control" id="exampleFormControlInput3" placeholder=""
+               [(ngModel)]="this.servicio.articuloActual.url" name="url">
+      </div>
+
+      <button class="btn btn-primary" (click)="abrir()">Probar análisis de precio</button>
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="modal.close('Save click')">Actualizar producto</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-warning text-right" (click)="open(content)">
+  <fa-icon [icon]="faPenToSquare"></fa-icon>
+</button>
+
+<!-- <button class="btn btn-primary" (click)="open(content)">Rastrear producto</button> -->

@@ -9,6 +9,7 @@ import {Precio} from "./model/Precio";
 })
 export class ServicioService {
 
+
   private apiUrl = 'http://localhost:5000';
   public articulos: Articulo[] = [];
   public articuloActual: Articulo | any;
@@ -51,6 +52,14 @@ export class ServicioService {
     return this.http.delete<number>(`${this.apiUrl}/articulos/` + id)
   }
 
+  updateArticulo(id: number): Observable<Articulo> {
+    console.log(`${this.apiUrl}/articulos/` + id)
+    return this.http.put<Articulo>(`${this.apiUrl}/articulos/` + id, this.articuloActual)
+  }
+
+  // updateArticulo(nuevoArticulo: Articulo) {
+  //   throw new Error('Method not implemented.');
+  // }
   getArticulos(): Observable<Articulo[]> {
     return this.http.get<Articulo[]>(`${this.apiUrl}/articulos`)
   }
