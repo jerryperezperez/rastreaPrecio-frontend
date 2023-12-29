@@ -15,7 +15,8 @@ export class ModalEditProductComponent {
   nuevoArticulo: Articulo = {
     name: "",
     store: "",
-    url: ""
+    url: "",
+    website: ""
   };
 
   constructor(private modalService: NgbModal, protected servicio: ServicioService) {

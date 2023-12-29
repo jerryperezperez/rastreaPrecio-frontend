@@ -8,6 +8,17 @@
   <div class="modal-body">
     <form>
       <div class="form-group">
+        <label for="exampleFormControlSelect1">Seleccione su modo de búsqueda</label>
+        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="nuevoArticulo.website">
+          <option>Google Shopping</option>
+          <option>Amazon</option>
+          <option>Mercado Libre</option>
+          <option>Walmart</option>
+          <option>Chedraui</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="exampleFormControlInput1">Nombre de producto</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""
                [(ngModel)]="nuevoArticulo.name" name="producto">
@@ -20,8 +31,14 @@
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlInput1">URL de producto</label>
+        <label for="exampleFormControlInput1">Sitio web de producto</label>
         <input type="url" class="form-control" id="exampleFormControlInput3" placeholder=""
+               [(ngModel)]="nuevoArticulo.website" name="website">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">URL de producto</label>
+        <input type="url" class="form-control" id="exampleFormControlInput4" placeholder=""
                [(ngModel)]="nuevoArticulo.url" name="url">
       </div>
 

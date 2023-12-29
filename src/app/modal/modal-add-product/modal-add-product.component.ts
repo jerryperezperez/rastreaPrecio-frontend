@@ -15,7 +15,8 @@ export class ModalAddProductComponent {
   nuevoArticulo: Articulo = {
     name: "",
     store: "",
-    url: ""
+    url: "",
+    website: "",
   };
 
   constructor(private modalService: NgbModal, private servicio:ServicioService) {
